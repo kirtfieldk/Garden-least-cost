@@ -1,3 +1,4 @@
+//Keith Kirtfield
 import java.util.Scanner;
 
 public class cmsc401 {
@@ -61,29 +62,36 @@ public class cmsc401 {
         if(array.length == 0)
             return 0;
         int mid = array.length / 2;
-        if(array[mid].getSize() >= array[mid-1].getSize() && array[mid].getSize() >= array[mid+1].getSize())
-            return array[mid].getDistance();
-        if(array[mid + 1].getSize() >= array[mid].getSize() && array[mid + 1].getSize() >= array[mid - 1].getSize())
+        if(array[mid + 1].getSize() >= array[mid].getSize() && array[mid + 1].getSize() >= array[mid - 1].getSize() && mid + 1 != array.length - 1)
             return array[mid+1].getDistance();
-        if(array[mid - 1 ].getSize() >= array[mid].getSize() && array[mid - 1].getSize() >= array[mid+1].getSize())
+        if(array[mid].getSize() >= array[mid-1].getSize())
+            return array[mid].getDistance();
+        if(array[mid - 1 ].getSize() >= array[mid].getSize())
             return array[mid - 1].getDistance();
         return 0;
     }
 
-
+// 1 2 12 33
 //10 + 4 + 2 + 0 + 18 = 34  CORRECT!!!!!
 //6 + 2 + 0 + 4 + 24 = 36
 
 //14 + 15 + 8 + 0 + 1 = 38 CORRECT!!!!
 //6 + 3 + 0 + 20 + 10 = 39
 }
+//96 + 36 + 13 = 115
+//57 + 10 + 0 + 26 = 93 INCORRECT!!!
 
 
+//1 3, 15 2, 20 1, 33 2
 
+//42 + 5 + 36 = 83
+//0 + 66 + 55 = 121
+//99 + 0+ 22 = 121
+//0 + 1 + 88 = 89
+//3 + 86 = 89 CORRECT !!
 
-
-
-
+//33 + 10 + 0 + 63 = 106
+//3 + 0 + 10 + 93 = 106 CORRECT!!!!!
 //Created this object to hold the both data aspects of the garden
 class garden{
     private int distance;
